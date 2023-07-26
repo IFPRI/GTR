@@ -1,0 +1,30 @@
+#' CleanR
+#'
+#' @return Cleanup for GMS files with "optimized" parameter descriptions
+#' @export
+#' @examples
+#' \dontrun{
+#' cleanR()
+#' }
+#' @author Abhijeet Mishra
+cleanR <- function(file_path) {
+    # Read the content of the R file
+    content <- readLines(file_path)
+
+    # Construct the regular expression pattern to match the text block
+    pattern_start   <- "*########### Begin R"
+    pattern_end     <- "*########### End R"
+
+    # Remove the text block using the pattern
+    start_clean <- grep(pattern = pattern_start, x = content)
+    end_clean <- grep(pattern = pattern_end, x = content)
+
+
+    if (length(start_clean) != 0 && length(end_clean) != 0) {
+        # Split the cleaned content back into lines
+        cleaned_content_lines <- content[-(start_clean:end_clean)]
+
+        # Write the modified content back to the file
+        writeLines(cleaned_content_lines, file_path)
+    }
+}

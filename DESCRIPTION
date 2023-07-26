@@ -1,0 +1,13 @@
+Package: GTR
+Type: Package
+Title: GAMS Text inserter for R
+Version: 0.0.0
+Authors@R: c(
+    person("Abhijeet", "Mishra", , "A.Mishra@cgiar.org", role = c("aut", "cre"))
+    )
+Maintainer: Abhijeet Mishra <A.Mishra@cgiar.org>
+Description: GAMS Text inserter for R.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
