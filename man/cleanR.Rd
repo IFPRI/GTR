@@ -2,18 +2,20 @@
 % Please edit documentation in R/cleanR.R
 \name{cleanR}
 \alias{cleanR}
-\title{CleanR}
+\title{cleanR}
 \usage{
-cleanR(file_path)
+cleanR(file_path, return_text_only = FALSE)
 }
 \arguments{
 \item{file_path}{Path to file for cleanup of R block}
+
+\item{return_text_only}{If only cleaned text be returned}
 }
 \value{
 Cleanup for GMS files with "optimized" parameter descriptions
 }
 \description{
-CleanR
+cleanR
 }
 \examples{
 \dontrun{

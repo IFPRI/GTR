@@ -1,6 +1,8 @@
 #' cleanR
 #'
+#' @param return_text_only If only cleaned text be returned
 #' @param file_path Path to file for cleanup of R block
+#'
 #' @return Cleanup for GMS files with "optimized" parameter descriptions
 #' @export
 #' @examples
@@ -8,8 +10,8 @@
 #' cleanR()
 #' }
 #' @author Abhijeet Mishra
-cleanR <- function(file_path) {
-    # Read the content of the R file
+cleanR <- function(file_path, return_text_only = FALSE) {
+
     content <- readLines(file_path)
 
     # Construct the regular expression pattern to match the text block
@@ -25,7 +27,11 @@ cleanR <- function(file_path) {
         # Split the cleaned content back into lines
         cleaned_content_lines <- content[-(start_clean:end_clean)]
 
-        # Write the modified content back to the file
-        writeLines(cleaned_content_lines, file_path)
+        if (return_text_only) {
+            return(cleaned_content_lines)
+        } else {
+            # Write the modified content back to the file
+            writeLines(cleaned_content_lines, file_path)
+        }
     }
 }
