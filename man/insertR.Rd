@@ -6,6 +6,9 @@
 \usage{
 insertR(model_path = NULL)
 }
+\arguments{
+\item{model_path}{Path to model}
+}
 \value{
 Modified GMS files with "optimized" parameter descriptions
 }

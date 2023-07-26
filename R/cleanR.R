@@ -1,5 +1,6 @@
 #' CleanR
 #'
+#' @param file_path Path to file for cleanup of R block
 #' @return Cleanup for GMS files with "optimized" parameter descriptions
 #' @export
 #' @examples

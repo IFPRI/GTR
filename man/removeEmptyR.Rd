@@ -4,7 +4,12 @@
 \alias{removeEmptyR}
 \title{removeEmptyR}
 \usage{
-removeEmptyR(model_path = NULL)
+removeEmptyR(model_path = NULL, multiline_fix = FALSE)
+}
+\arguments{
+\item{model_path}{Path to model}
+
+\item{multiline_fix}{If multiple newlines should be cleaned. Default is FALSE}
 }
 \value{
 Modified GMS files with "optimized" parameter descriptions

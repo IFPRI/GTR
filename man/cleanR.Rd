@@ -6,6 +6,9 @@
 \usage{
 cleanR(file_path)
 }
+\arguments{
+\item{file_path}{Path to file for cleanup of R block}
+}
 \value{
 Cleanup for GMS files with "optimized" parameter descriptions
 }

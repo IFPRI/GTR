@@ -1,5 +1,7 @@
 #' removeEmptyR
 #'
+#' @param model_path Path to model
+#' @param multiline_fix If multiple newlines should be cleaned. Default is FALSE
 #' @return Modified GMS files with "optimized" parameter descriptions
 #' @import stringr
 #' @export

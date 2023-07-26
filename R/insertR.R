@@ -1,5 +1,6 @@
 #' insertR
 #'
+#' @param model_path Path to model
 #' @return Modified GMS files with "optimized" parameter descriptions
 #' @import stringr
 #' @export
