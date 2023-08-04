@@ -1,7 +1,7 @@
 Package: GTR
 Type: Package
 Title: GAMS Text inserter for R
-Version: 1.3.0
+Version: 1.4.0
 Authors@R: c(
     person("Abhijeet", "Mishra", , "A.Mishra@cgiar.org", role = c("aut", "cre"))
     )
