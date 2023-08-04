@@ -29,6 +29,16 @@ addHeadR <- function(model_path = NULL) {
         }
     }
 
+    new_text <- c(
+        "*** |  (C) 2023 International Food Policy Research Institute (IFPRI)",
+        "*** |  authors, and contributors. This file is part of the model named",
+        "*** |  Land Use Model with Environmental Nexus (LUMEN) and is licensed",
+        "*** |  under AGPL-3.0-or-later. Under Section 7 of AGPL-3.0. You are",
+        "*** |  granted additional permissions described in the License Exception",
+        "*** |  version 1.0 (see LICENSE file).",
+        "*** |  Contact: A.Mishra@cgiar.org"
+    )
+
     for (i in target_files) {
         # Step 1: Read the content of the text file
         existing_content <- readLines(i)
@@ -38,20 +48,11 @@ addHeadR <- function(model_path = NULL) {
         }
 
         # Step 3: Add the new text on top
-        new_text <- c(
-            "*** |  (C) 2008-2023 International Food Policy Research Institute (IFPRI)",
-            "*** |  authors, and contributors. This file is part of the simple land use",
-            "*** |  and licensed under AGPL-3.0-or-later. Under Section 7 of AGPL-3.0",
-            "*** |  you are granted additional permissions described in the License",
-            "*** |  Exception, version 1.0 (see LICENSE file).",
-            "*** |  Contact: A.Mishra@cgiar.org"
-        )
-
         updated_content <- c(new_text, existing_content)
 
         # Step 4: Write the updated content back to the GMS file
         writeLines(updated_content, con = i)
-        lapply(model_path, removeEmptyR, multiline_fix = TRUE)
+        invisible(lapply(model_path, removeEmptyR, multiline_fix = TRUE))
     }
     cat("New text has been added on top of the GMS file.")
 }
