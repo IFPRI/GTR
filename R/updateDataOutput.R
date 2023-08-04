@@ -21,22 +21,22 @@ updateDataOutput <- function(model_path = NULL) {
 
     # Clean empty lines
     message("Cleaning empty lines at the end of the files ...")
-    lapply(model_path, removeEmptyR)
+    invisible(lapply(model_path, removeEmptyR))
 
     # Clean section of R if It already exists
     message("Cleaning pre-existing R sections if they exist ...")
-    lapply(target_files, cleanR)
+    invisible(lapply(target_files, cleanR))
 
     # Add newline if needed
     message("Adding newlines for file endings ...")
-    lapply(model_path, addNewlineR)
+    invisible(lapply(model_path, addNewlineR))
 
     addDescriptionPar(target_files = target_files)
 
-    lapply(model_path, removeEmptyR, multiline_fix = TRUE)
+    invisible(lapply(model_path, removeEmptyR, multiline_fix = TRUE))
 
     addDescriptionPost(target_files = target_files)
 
-    lapply(model_path, removeEmptyR, multiline_fix = TRUE)
+    invisible(lapply(model_path, removeEmptyR, multiline_fix = TRUE))
 
 }
