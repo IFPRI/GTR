@@ -25,7 +25,7 @@ parGen <- function(lines_after_pattern) {
     par <- substring(input_vector, 1, first_space_index - 1)
     par <- trimws(par, which = c("right"), whitespace = "[ \t\r\n]")
     descriptor <- substring(input_vector, first_space_index + 1)
-    descriptor <- gsub(pattern = "\\\t", replacement = "",x = descriptor)
+    descriptor <- gsub(pattern = "\\\t", replacement = "", x = descriptor)
 
     # Create the dataframe
     df <- data.frame(par, descriptor)
