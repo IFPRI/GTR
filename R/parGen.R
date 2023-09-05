@@ -21,11 +21,9 @@ parGen <- function(lines_after_pattern) {
     input_vector <- text_to_add
 
     # Split the vector into two columns based on the whitespace
-    first_space_index <- regexpr("\\s\\s\\s|\t", input_vector)
+    first_space_index <- regexpr("\\s\\s\\s", input_vector)
     par <- substring(input_vector, 1, first_space_index - 1)
-    par <- trimws(par, which = c("right"), whitespace = "[ \t\r\n]")
     descriptor <- substring(input_vector, first_space_index + 1)
-    descriptor <- gsub(pattern = "\\\t", replacement = "", x = descriptor)
 
     # Create the dataframe
     df <- data.frame(par, descriptor)
